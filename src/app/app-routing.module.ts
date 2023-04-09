@@ -2,7 +2,6 @@ import { AccountComponent } from './modules/account/account.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BaseComponent } from './layout/base.component';
-import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   {

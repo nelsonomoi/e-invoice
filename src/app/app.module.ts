@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.modules';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -12,9 +15,11 @@ import { CoreModule } from './core/core.modules';
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     CoreModule
   ],
   providers: [],

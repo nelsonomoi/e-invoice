@@ -1,1 +1,35 @@
-<p>users works!</p>
+<div class="page-header">
+    <h2 class="header-title">Users Listing</h2>
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a href="javascript:void(0)" class="breadcrumb-item"><i
+                    class="anticon anticon-setting m-r-5"></i>Setting</a>
+            <a class="breadcrumb-item" href="javascript:void(0)">User Management</a>
+            <span class="breadcrumb-item active">Users</span>
+        </nav>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <button class="btn btn-primary m-r-5"> <i class="anticon anticon-plus-circle"></i> New User</button>
+        <hr>
+        <div class="m-t-25">
+            <div class="table-responsive">
+                <!-- <table datatable [dtOptions]="dtOptions" class="table"> -->
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>PHONE</th>
+                            <!-- <th>STATUS</th>
+                            <th>ACTIONS</th> -->
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

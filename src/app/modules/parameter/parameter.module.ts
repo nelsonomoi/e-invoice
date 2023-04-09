@@ -1,9 +1,9 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompanyComponent } from './pages/company/company.component';
 import { UsersComponent } from './pages/users/users.component';
-import { RouterModule, Routes } from '@angular/router';
-
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -12,7 +12,8 @@ import { RouterModule, Routes } from '@angular/router';
     UsersComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DataTablesModule
   ],
   exports: []
 })

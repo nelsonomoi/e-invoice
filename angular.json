@@ -24,17 +24,21 @@
               "src/favicon.ico",
               "src/assets"
             ],
+
             "styles": [
-              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css",
-              "src/assets/css/app.min.css"
-          
+              "src/assets/css/app.min.css",
+              "src/assets/vendors/datatables/dataTables.bootstrap.min.css"
+              
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",
-              "src/assets/js/custom.js",
               "src/assets/js/vendors.min.js",
-              "src/assets/js/app.min.js"
+              "src/assets/js/app.min.js",
+              "src/assets/js/custom.js",
+              "src/assets/vendors/datatables/jquery.dataTables.min.js",
+              "src/assets/vendors/datatables/dataTables.bootstrap.min.js"
+            
+              
             ]
           },
           "configurations": {
