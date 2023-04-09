@@ -1,0 +1,35 @@
+<div class="app">
+
+    <div class="layout">
+
+        <app-header></app-header>
+
+        <app-sidebar></app-sidebar>
+
+        <!-- Page Container START -->
+        <div class="page-container">
+
+            
+            <!-- Content Wrapper START -->
+            <div class="main-content">
+                <router-outlet></router-outlet>
+            </div>
+            <!-- Content Wrapper END -->
+
+            <!-- Footer START -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p class="m-b-0">
+                        ©
+                        <script>document.write(new Date().getFullYear())</script> Oumoi <span
+                            class="d-none d-sm-inline-block"> <i class="mdi mdi-heart text-danger"></i></span>
+                    </p>
+                </div>
+            </footer>
+            <!-- Footer END -->
+
+        </div>
+        <!-- Page Container END -->
+    </div>
+
+</div>

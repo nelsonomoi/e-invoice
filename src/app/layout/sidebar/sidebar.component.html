@@ -1,0 +1,67 @@
+ <!-- Side Nav START -->
+ <div class="side-nav">
+    <div class="side-nav-inner">
+        <ul class="side-nav-menu scrollable" #sideNavMenu>
+            <li class="nav-item">
+                <a routerLink="home">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-dashboard"></i>
+                    </span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" (click)="toggleOpen($event)" href="javascript:void(0);">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-file-done"></i>
+                    </span>
+                    <span class="title">Invoice</span>
+                    <span class="arrow">
+                        <i class="arrow-icon"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a routerLink="/home">Invoice List</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" (click)="toggleOpen($event)" href="javascript:void(0);">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-setting"></i>
+                    </span>
+                    <span class="title">Setting</span>
+                    <span class="arrow">
+                        <i class="arrow-icon"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a routerLink="parameter/company">Company</a>
+                    </li>
+                   
+                    <li class="nav-item dropdown">
+                        <a href="javascript:void(0);" (click)="toggleOpen($event)">
+                            <span>User Management</span>
+                            <span class="arrow">
+                                <i class="arrow-icon"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a routerLink="parameter/users">Users</a>
+                            </li>
+                            <li>
+                                <a routerLink="parameter/users">Roles</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Side Nav END -->

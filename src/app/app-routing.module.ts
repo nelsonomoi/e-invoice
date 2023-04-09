@@ -1,15 +1,18 @@
-import { HomeComponent } from './core/components/home/home.component';
+import { AccountComponent } from './modules/account/account.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BaseComponent } from './layout/base.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'home', pathMatch: 'full'
+    path: 'account', component: AccountComponent,
+    loadChildren: () => import('./modules/account/account.module').then(m => m.AccountModule)
   },
-
   {
-    path: 'home', component: HomeComponent
-  },
+    path: '',
+    loadChildren: () => import('./modules/main.module').then(m => m.MainModule)
+  }
 
 ];
 
