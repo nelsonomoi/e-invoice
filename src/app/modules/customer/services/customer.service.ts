@@ -1,19 +1,21 @@
+import { environment } from './../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-
+export class CustomerService {
+  
   BASE_URL =  environment.BASE_API_ENDPOINT +"/customer"
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
 
-  fetchStudents(dataTablesParameters:any){
-
+  fetchCustomers(dataTablesParameters: any) {
+    
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });

@@ -1,0 +1,35 @@
+<div class="page-header">
+    <h2 class="header-title">Customers</h2>
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a href="javascript:void(0)" class="breadcrumb-item"><i
+                    class="anticon anticon-contacts m-r-5"></i>Customer</a>
+            
+            <span class="breadcrumb-item active">Customers</span>
+        </nav>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <button class="btn btn-primary m-r-5"> <i class="anticon anticon-plus-circle"></i> New Customer</button>
+        <hr>
+        <div class="m-t-25">
+            <div class="table-responsive">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-bordered">
+                    <thead class="table-header">
+                        <tr>
+                            <th>#ID</th>
+                            <th>CUSTOMER ID</th>
+                            <th><i class="anticon anticon-user"></i> NAME</th>
+                            <th><i class="anticon anticon-mail"></i> EMAIL</th>
+                            <th><i class="anticon anticon-phone"></i> PHONE</th>
+                            <th><i class="anticon anticon-exclamation"></i> STATUS</th>
+                            <th><i class="anticon anticon-thunderbolt"></i> ACTIONS</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

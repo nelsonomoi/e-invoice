@@ -14,6 +14,23 @@
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" (click)="toggleOpen($event)" href="javascript:void(0);">
                     <span class="icon-holder">
+                        <i class="anticon anticon-contacts"></i>
+                    </span>
+                    <span class="title">Customer</span>
+                    <span class="arrow">
+                        <i class="arrow-icon"></i>
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a routerLink="/customer/customers">Customers</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle" (click)="toggleOpen($event)" href="javascript:void(0);">
+                    <span class="icon-holder">
                         <i class="anticon anticon-file-done"></i>
                     </span>
                     <span class="title">Invoice</span>
@@ -23,7 +40,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a routerLink="/home">Invoice List</a>
+                        <a routerLink="/invoice/invoices">Invoice List</a>
                     </li>
                 </ul>
             </li>

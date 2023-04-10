@@ -1,6 +1,6 @@
+import { CustomerComponent } from './customer/customer.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 import { UsersComponent } from './parameter/pages/users/users.component';
-import { AccountComponent } from './account/account.component';
-import { LayoutModule } from './../layout/layout.module';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { BaseComponent } from '../layout/base.component';
@@ -12,6 +12,22 @@ const routeForPages  = [
     {
         path: 'home',
         component: DashboardComponent
+    },
+
+    {
+
+        path: 'customer',
+        component:CustomerComponent,
+        loadChildren: () => import('./customer/customer.module').then((m) => m.CustomerModule)
+
+    },
+
+    {
+
+        path: 'invoice',
+        component:InvoiceComponent,
+        loadChildren: () => import('./invoice/invoice.module').then((m) => m.InvoiceModule)
+
     },
 
     {
