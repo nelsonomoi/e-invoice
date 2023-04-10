@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { AccountComponent } from './account.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -22,7 +23,9 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AccountModule { }

@@ -57,23 +57,26 @@ export class UsersComponent implements OnInit, OnDestroy, AfterViewInit {
               })
           },
           columns: [
-            {data: "id"},
-            {data: "firstname"},
+            {data: "id" , searchable: false},
+            {data: null, render: function(data,type,row){
+              return row.firstname + "  " +row.lastname
+            }},
             {data: "email"},
             {data: "phone"},
-            // {
-            //   "data": null,
-            //   "render": function(data,type,row){
-              
-            //   }
+            {
+              data: null,
+              searchable:false,
+              render: function(data,type,row){
+                return `<span class="badge badge-success">active</span>`
+              }
 
-            // },
-            // {
-            //   "data":null,
-            //   "render": function(data,type,row){
-              
-            //   }
-            // }
+            },
+            {
+              data:null,
+              render: function(data,type,row){
+                  return `<button class="btn btn-sm"><i class="anticon anticon-eye"></i></button>`
+              }
+            }
             
           ],
         };
