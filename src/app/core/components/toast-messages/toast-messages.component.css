@@ -1,0 +1,32 @@
+.success{
+    background-color: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.error{
+    background-color: #e2584c;
+    border-color: #e2584c;
+    color: #fff;
+}
+
+.warning{
+    background-color: #ffc721;
+    border-color: #ffc721;
+    color: #fff;
+}
+
+.info {
+    background-color: #0ee1fd;
+    border-color: #0ee1fd;
+    color: #fff;
+}
+
+.toast-header{
+    border-color: #636564;
+}
+
+
+.close:focus{
+    outline: 0 !important;
+}

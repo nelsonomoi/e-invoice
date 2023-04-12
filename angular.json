@@ -28,7 +28,8 @@
             "styles": [
               "src/styles.css",
               "src/assets/css/app.min.css",
-              "src/assets/vendors/datatables/dataTables.bootstrap.min.css"
+              "src/assets/vendors/datatables/dataTables.bootstrap.min.css",
+              "src/assets/vendors/select2/select2.css"
               
             ],
             "scripts": [
@@ -36,7 +37,8 @@
               "src/assets/js/app.min.js",
               "src/assets/js/custom.js",
               "src/assets/vendors/datatables/jquery.dataTables.min.js",
-              "src/assets/vendors/datatables/dataTables.bootstrap.min.js"
+              "src/assets/vendors/datatables/dataTables.bootstrap.min.js",
+              "src/assets/vendors/select2/select2.min.js"
             
               
             ]

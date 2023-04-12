@@ -1,3 +1,5 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewCustomerComponent } from './pages/modals/new-customer/new-customer.component';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,12 +20,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     CustomerComponent,
-    CustomersComponent
+    CustomersComponent,
+    NewCustomerComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    DataTablesModule
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CustomerModule { }

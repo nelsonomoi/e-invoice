@@ -1,7 +1,9 @@
 <div class="app">
 
-    <div class="layout">
+   
 
+    <div class="layout">
+        
         <app-header></app-header>
 
         <app-sidebar></app-sidebar>
@@ -13,8 +15,14 @@
             <!-- Content Wrapper START -->
             <div class="main-content">
                 <router-outlet></router-outlet>
+                
+                
             </div>
             <!-- Content Wrapper END -->
+
+            <div class="notification-toast top-right" id="notification-toast">
+                <app-toast-messages></app-toast-messages>
+            </div>
 
             <!-- Footer START -->
             <footer class="footer">

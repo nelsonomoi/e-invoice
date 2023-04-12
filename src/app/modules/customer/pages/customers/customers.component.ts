@@ -1,6 +1,11 @@
+import { ToastService } from './../../../../core/services/toast.service';
+import { NewCustomerComponent } from '../modals/new-customer/new-customer.component';
 import { CustomerService } from './../../services/customer.service';
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
+import { ModalService } from 'src/app/core/services/modal.service';
+
+declare var $: any;
 
 @Component({
     selector: 'app-customers',
@@ -8,13 +13,20 @@ import { Subject } from 'rxjs';
     styleUrls: ['./customers.component.css'],
 })
 export class CustomersComponent implements OnInit, OnDestroy, AfterViewInit {
+
+    @ViewChild(NewCustomerComponent) newCustomerModal: NewCustomerComponent;
+
     dtOptions: DataTables.Settings;
 
     dtTrigger: Subject<any> = new Subject<any>();
 
     customerData: any;
 
-    constructor(private customerService: CustomerService) {}
+    constructor(
+      private customerService: CustomerService,
+      private modalService: ModalService,
+      private toast: ToastService
+      ) {}
 
     ngOnInit(): void {
         this.dtOptions = {
@@ -82,5 +94,26 @@ export class CustomersComponent implements OnInit, OnDestroy, AfterViewInit {
 
     ngAfterViewInit(): void {
         this.dtTrigger.next(null);
+      //   this.toast.show('This page has loaded successfully.', {
+      //     title: 'Success',
+      //     type: 'success',
+      //     icon: 'success'
+      // })
     }
+
+
+    OpenNewCustomerModal(): void{
+      
+    }
+
+
+    // onCustomerTypeChange(event:any): void{
+    //   if (event.target.value == 'RETAIL') {
+    //     this.isRetail = true
+    //   }else{
+    //     this.isRetail = false
+    //   }
+      
+     
+    // }
 }

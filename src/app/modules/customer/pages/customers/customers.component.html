@@ -12,7 +12,11 @@
 
 <div class="card">
     <div class="card-body">
-        <button class="btn btn-primary m-r-5"> <i class="anticon anticon-plus-circle"></i> New Customer</button>
+        <div class="d-flex justify-content-end">
+            <button  data-toggle="modal" data-target="#search-customer" class="btn btn-outline-primary btn-tone btn-sm m-r-5"> <i class="anticon anticon-filter"></i> Filter</button>
+            <button  data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-success  m-r-5"> <i class="anticon anticon-plus-circle"></i> New Customer</button>
+        </div>
+        
         <hr>
         <div class="m-t-25">
             <div class="table-responsive">
@@ -33,3 +37,103 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade bd-example-modal-lg show" id="new-customer-modal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg" role="dialog">
+       <app-new-customer></app-new-customer>
+    </div>
+</div>
+
+<!-- Search Start-->
+<div class="modal modal-right fade" role="document" id="search-customer">
+    <div class="modal-dialog mw-50 w-100">
+        <div class="modal-content">
+            <div class="modal-header justify-content-between align-items-center">
+                <h5 class="modal-title">Filter</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <i class="anticon anticon-close"></i>
+                </button>
+            </div>
+            <div class="modal-body scrollable">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="customerType">Customer Type</label>
+                                <select class="form-control form-control-sm select2" id="customerType">
+                                    <option value="">Choose type</option>
+                                    <option value="RETAIL">Retail</option>
+                                    <option value="CORPORATE">Corporate</option>
+                                    <option value="SMEs">SMEs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">  Customer Code</label>
+                                <input type="text" class="form-control form-control-sm" id="name" placeholder="Customer code">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control form-control-sm" id="name" placeholder="Customer name">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="name">Email</label>
+                            <input type="text" class="form-control form-control-sm" id="name" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Phone</label>
+                            <input type="text" class="form-control form-control-sm" id="name" placeholder="Phone">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="status">Status</label>
+                            <select class="form-control form-control-sm select2" id="status">
+                                <option value="">Choose status</option>
+                                <option value="RETAIL">ACTIVE</option>
+                                <option value="CORPORATE">SUSPENDED</option>
+                                <option value="SMEs">ENDED</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+
+                    <hr>
+
+                    <h6>Created On/Or</h6>
+
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-6">
+                            <label for="name">Start Date</label>
+                            <input type="date" class="form-control form-control-sm" id="name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">End Date</label>
+                            <input type="date" class="form-control form-control-sm" id="name">
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="form-row">
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button> &nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Filter</button>
+                        </div>
+                    
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search End-->

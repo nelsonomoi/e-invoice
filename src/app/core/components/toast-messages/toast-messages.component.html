@@ -1,0 +1,14 @@
+
+<div *ngFor="let toast of toasts" class="col-md-12 mb-1">
+    <div role="alert" class="toast fade show" [ngClass]="toast.type" data-delay="3000">
+        <div class="toast-header" [ngClass]="toast.type">
+            <strong class="mr-auto">{{toast.title}}</strong>
+            <button type="button" (click)="toastClose()" class="ml-2 close text-white" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+           {{ toast.message }}
+        </div>
+    </div>
+</div>

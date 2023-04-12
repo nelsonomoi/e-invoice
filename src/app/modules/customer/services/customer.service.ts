@@ -1,3 +1,4 @@
+import { Customer } from './../models/customer.model';
 import { environment } from './../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,7 +16,7 @@ export class CustomerService {
 
 
   fetchCustomers(dataTablesParameters: any) {
-    
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
@@ -23,5 +24,16 @@ export class CustomerService {
     const payload = dataTablesParameters
     
     return this.http.post(this.BASE_URL+"/all",payload,{ headers })
+  }
+
+
+  saveCustomer(payload: Customer){
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.post(this.BASE_URL,payload,{ headers })
+
   }
 }

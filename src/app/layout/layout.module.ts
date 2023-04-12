@@ -1,3 +1,4 @@
+import { CoreModule } from './../core/core.modules';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -21,7 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    CoreModule
   ]
 })
 

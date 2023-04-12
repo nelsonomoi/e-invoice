@@ -33,9 +33,18 @@
                 </a>
             </li>
             <li>
-                <a href="javascript:void(0);" data-toggle="modal" data-target="#search-drawer">
+                <!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#search-drawer">
                     <i class="anticon anticon-search"></i>
-                </a>
+                </a> -->
+                <div class="dropdown dropdown-animated">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Quick Access
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" routerLink="/customer/customers">Customers</a>
+                        <a class="dropdown-item" routerLink="/invoice/invoices">Invoices</a>
+                    </div>
+                </div>
             </li>
         </ul>
         <ul class="nav-right">
