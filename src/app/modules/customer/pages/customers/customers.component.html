@@ -14,11 +14,11 @@
     <div class="card-body">
         <div class="d-flex justify-content-end">
             <button  data-toggle="modal" data-target="#search-customer" class="btn btn-outline-primary btn-tone btn-sm m-r-5"> <i class="anticon anticon-filter"></i> Filter</button>
-            <button  data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-success  m-r-5"> <i class="anticon anticon-plus-circle"></i> New Customer</button>
+            <button  data-toggle="modal" data-target=".bd-example-modal-lg" class="btn btn-success btn-sm m-r-5"> <i class="anticon anticon-plus-circle"></i> New</button>
+            <button  class="btn btn-outline-secondary btn-sm m-r-5"> <i class="anticon anticon-file-excel"></i> CSV Export</button>
         </div>
         
-        <hr>
-        <div class="m-t-25">
+        <div class="">
             <div class="table-responsive">
                 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-hover table-bordered">
                     <thead class="table-header">

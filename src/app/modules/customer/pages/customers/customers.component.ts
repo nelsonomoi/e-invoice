@@ -36,6 +36,7 @@ export class CustomersComponent implements OnInit, OnDestroy, AfterViewInit {
             lengthMenu: [5, 10, 25],
             serverSide: true,
             processing: true,
+            searching:false,
             ajax: (dataTablesParameters: any, callback) => {
                 this.customerService
                     .fetchCustomers(dataTablesParameters)
