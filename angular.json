@@ -29,16 +29,21 @@
               "src/styles.css",
               "src/assets/css/app.min.css",
               "src/assets/vendors/datatables/dataTables.bootstrap.min.css",
-              "src/assets/vendors/select2/select2.css"
+              "src/assets/vendors/select2/select2.css",
+              "./node_modules/@swimlane/ngx-datatable/index.css",
+              "./node_modules/@swimlane/ngx-datatable/themes/material.scss",
+              "./node_modules/@swimlane/ngx-datatable/themes/dark.scss",
+              "./node_modules/@swimlane/ngx-datatable/themes/bootstrap.scss",
+              "./node_modules/@swimlane/ngx-datatable/assets/icons.css"
               
             ],
             "scripts": [
               "src/assets/js/vendors.min.js",
               "src/assets/js/app.min.js",
-              "src/assets/js/custom.js",
               "src/assets/vendors/datatables/jquery.dataTables.min.js",
               "src/assets/vendors/datatables/dataTables.bootstrap.min.js",
-              "src/assets/vendors/select2/select2.min.js"
+              "src/assets/vendors/select2/select2.min.js",
+              "src/assets/js/custom.js"
             
               
             ]

@@ -4,6 +4,10 @@ import { InvoiceComponent } from './invoice.component';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DataTablesModule } from 'angular-datatables';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 const routes: Routes = [
 
@@ -23,7 +27,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    DataTablesModule
+    DataTablesModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatSortModule
   ]
 })
 export class InvoiceModule { }

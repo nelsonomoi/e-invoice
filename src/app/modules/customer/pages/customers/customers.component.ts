@@ -1,9 +1,16 @@
 import { ToastService } from './../../../../core/services/toast.service';
 import { NewCustomerComponent } from '../modals/new-customer/new-customer.component';
 import { CustomerService } from './../../services/customer.service';
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+} from '@angular/core';
 import { Subject } from 'rxjs';
 import { ModalService } from 'src/app/core/services/modal.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 declare var $: any;
 
@@ -20,101 +27,103 @@ export class CustomersComponent implements OnInit, OnDestroy, AfterViewInit {
 
     dtTrigger: Subject<any> = new Subject<any>();
 
-    customerData: any;
+    customerData: any[] = [];
+
+    searchCustomerForm = this.fb.group({
+      customerId: ['']
+    })
 
     constructor(
-      private customerService: CustomerService,
-      private modalService: ModalService,
-      private toast: ToastService
-      ) {}
+        private customerService: CustomerService,
+        private modalService: ModalService,
+        private toast: ToastService,
+        private fb: FormBuilder
+    ) {}
 
     ngOnInit(): void {
-        this.dtOptions = {
-            pagingType: 'full_numbers',
-            paging: true,
-            pageLength: 10,
-            lengthMenu: [5, 10, 25],
-            serverSide: true,
-            processing: true,
-            searching:false,
-            ajax: (dataTablesParameters: any, callback) => {
-                this.customerService
-                    .fetchCustomers(dataTablesParameters)
-                    .subscribe((data: any) => {
-                        this.customerData = data.content;
-                        callback({
-                            recordsTotal: data.totalElements,
-                            recordsFiltered: data.totalElements,
-                            data: this.customerData,
-                        });
-                    });
-            },
-            columns: [
-                { data: 'id', searchable: false },
-                { data: 'customerId', searchable: false },
-                {
-                    data: 'name',
-                    render: function (data, type, row) {
-                      if (row.customerType !='RETAIL') {
-                        return row.name
-                      }else{
-                        return row.middlename+'. '+ row.firstname + '  ' + row.lastname;
-                      }
-                        
-                    },
-                },
-                { data: 'email' },
-                { data: 'phone' },
-                {
-                    data: 'status',
-                    searchable: false,
-                    render: function (data, type, row) {
-                      if (row.status == 'ACTIVE') {
-                        return `<span class="badge badge-success">`+row.status+`</span>`;
-                      }else if(row.status == 'ENDED'){
-                        return `<span class="badge badge-secondary">`+row.status+`</span>`;
-                      }else{
-                        return `<span class="badge badge-danger">`+row.status+`</span>`;
-                      }
-                       
-                    },
-                },
-                {
-                    data: null,
-                    render: function (data, type, row) {
-                        return `<button class="btn btn-sm"><i class="anticon anticon-eye"></i></button>`;
-                    },
-                },
-            ],
+        let payload = {
+            page: 1,
+            size: 10,
         };
+
+        this.customerService.fetchCustomers(payload).subscribe((data: any) => {
+          this.customerData = data.content
+         
+        });
+        // const that = this
+
+        // this.dtOptions = {
+        //   pagingType: 'full_numbers',
+        //   searching: false,
+        //   ordering: true,
+        //   ajax: (dataTablesParameters: any, callback) => {
+        //     console.log(dataTablesParameters);
+        //     that.customerService.fetchCustomers(dataTablesParameters).subscribe(
+        //       (resp:any) => {
+        //         that.customerData = resp.content;
+    
+        //         callback({
+        //           recordsTotal: resp.recordsTotal,
+        //           recordsFiltered: resp.recordsFiltered,
+        //           data: []
+        //         });
+
+        //       });
+
+        //   },
+        //   columns: [
+        //     { data: 'id' }, 
+        //     { data: 'customerId' },
+        //     { 
+        //       title: 'Name',
+        //       render: function(data,type,row){
+        //         return row.firstname + ' ' + row.lastname
+        //       }
+        //      },
+        //     { data: 'email' },
+        //     { data: 'phone' },
+        //     { data: 'status' },
+        //     {
+        //       title: 'Action',
+        //       render: function(data,type,row){
+
+        //       }
+        //     }
+        //   ]
+        // };
     }
 
     ngOnDestroy(): void {
-        this.dtTrigger.unsubscribe();
+      
     }
 
     ngAfterViewInit(): void {
-        this.dtTrigger.next(null);
-      //   this.toast.show('This page has loaded successfully.', {
-      //     title: 'Success',
-      //     type: 'success',
-      //     icon: 'success'
-      // })
     }
 
+    resetDataTable(){
+      let payload = {
+        page: 1,
+        size: 10,
+    };
 
-    OpenNewCustomerModal(): void{
-      
+      this.customerService.fetchCustomers(payload).subscribe((data: any) => {
+        this.customerData = data
+       
+      });
     }
 
+    displayCustomerData(customerData: any) {
+    }
 
-    // onCustomerTypeChange(event:any): void{
-    //   if (event.target.value == 'RETAIL') {
-    //     this.isRetail = true
-    //   }else{
-    //     this.isRetail = false
-    //   }
-      
-     
-    // }
+    OpenNewCustomerModal(): void {}
+
+  search(){
+
+    this.customerService.searchCustomer(this.searchCustomerForm).subscribe((data: any) => {
+        this.customerData = data.content
+        this.searchCustomerForm.reset()
+    });
+
+    $('#search-customer').modal('hide')
+  }
 }

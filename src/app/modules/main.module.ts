@@ -7,6 +7,7 @@ import { MainRoutingModule } from './main-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InvoiceModule } from './invoice/invoice.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 

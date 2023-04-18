@@ -2,6 +2,7 @@ import { Customer } from './../models/customer.model';
 import { environment } from './../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,11 @@ export class CustomerService {
       'Content-Type': 'application/json'
     });
 
-    const payload = dataTablesParameters
+    // queryParams 
+
+    const payload = dataTablesParameters 
     
-    return this.http.post(this.BASE_URL+"/all",payload,{ headers })
+    return this.http.post(`${this.BASE_URL}/paging`,payload,{headers:headers})
   }
 
 
@@ -36,4 +39,19 @@ export class CustomerService {
     return this.http.post(this.BASE_URL,payload,{ headers })
 
   }
+
+
+  searchCustomer(searchCustomerForm:any) {
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    let payload = {
+      customerId: searchCustomerForm.controls.customerId.value
+    }
+
+    return this.http.post(this.BASE_URL+"/search",payload,{ headers })
+  }
+
 }

@@ -3,12 +3,19 @@ import { StorageService } from './services/storage.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 
 @NgModule({
-    declarations: [ToastMessagesComponent],
-    exports: [ToastMessagesComponent],
+    declarations: [
+        ToastMessagesComponent,
+        PaginationComponent
+    ],
+    exports: [
+        ToastMessagesComponent,
+        PaginationComponent
+    ],
     imports: [
         CommonModule,
         FormsModule,

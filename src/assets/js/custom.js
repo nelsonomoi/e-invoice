@@ -1,7 +1,11 @@
-jQuery(function(){
+$(document).ready(function(){
     $('.ok').on('click',function(){
         console.log("niko hapa kwa custom js");
     })
+
+    
+    $('.datatable').DataTable();
+
 })
 
 $(".side-nav .side-nav-menu li a").on("click", (e) => {
@@ -45,3 +49,4 @@ $(".header .nav-left .desktop-toggle").on("click", () => {
         appLayout.toggleClass(isExpand);
     });
 });
+

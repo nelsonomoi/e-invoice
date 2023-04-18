@@ -8,12 +8,14 @@ import { CoreModule } from './core/core.modules';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ToastMessagesComponent } from './core/components/toast-messages/toast-messages.component';
+import { PaginationComponent } from './core/components/pagination/pagination.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     CommonModule,
